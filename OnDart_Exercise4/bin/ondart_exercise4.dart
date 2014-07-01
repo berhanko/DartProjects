@@ -26,7 +26,7 @@ WriteFibonacci(int n) {
   var fSeriesBuffer = new StringBuffer('0 1 ');
   String fSeries;
   
-  for (int i=1; i<=n; i++) {
+  for (int i=3; i<=n; i++) { //The first 2 numbers are precalculated. Start with 3rd
     fSum = a+b;
     fSeriesBuffer.write('$fSum ');
     a=b;
@@ -39,7 +39,7 @@ WriteFibonacci(int n) {
 
 void main() {
   
-  //print(WriteFibonacci(11));
+  print(WriteFibonacci(11));
   
   print(CalculateEnd(120,30));
   
