@@ -5,7 +5,8 @@ void main() {
   
   //print(CheckIfLetter('Berhan_ '));
   
-  print(LongestSentence("Berhan gidiyorgibiyapıyor. Berhan dönecekmiş gibi yapın. Sıcucuckum."));
+ // print(LongestSentence("Berhan gidiyorgibiyapıyor. Berhan dönecekmiş gibi yapın. Sıcucuckum."));
+  print(palindrome('A man, a plan, a canal: Panama'));
   
 }
 

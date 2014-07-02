@@ -56,3 +56,36 @@ LongestSentence(String sentence) { //Also find longest word: change temp="." wit
     
   return longestSentence;
 }
+
+palindrome(String text) {
+  
+  String reverseNakedText=''; 
+  bool isPalindrome=false;
+  
+  String nakedText = text.replaceAll(new RegExp(r'\W+'), '');
+  
+    for (var i=nakedText.length-1; i>=0; i--) {
+      reverseNakedText='${reverseNakedText}${nakedText[i]}';
+    }
+    
+  if(reverseNakedText.toUpperCase() == nakedText.toUpperCase()) isPalindrome=true;
+  
+  return isPalindrome;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
