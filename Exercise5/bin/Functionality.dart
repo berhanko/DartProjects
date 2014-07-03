@@ -74,7 +74,78 @@ palindrome(String text) {
   
 }
 
+ConvertGrade(num grade) {
+  
+  String tGrade;
+  var gMin, gMax;
+  var gMap = new Map();
+  
+  gMap[[0,15]] = 'F';
+  gMap[[16,24]] = 'D';
+  gMap[[25,50]] = 'C';
+  gMap[[51,75]] = 'B';
+  gMap[[76,100]] = 'A';
+  
+  List gradeList = gMap.keys.toList();
+  List letterGradeList = gMap.values.toList();
+  
+    for(var i = 0; i<gradeList.length; i++) {
+      gMin = gradeList[i][0];
+      gMax = gradeList[i][1];
+        
+        if (grade>=gMin && grade<= gMax) { 
+          tGrade = letterGradeList[i];
+          break;
+        }
+    }
+  
+   return tGrade;
+    
+}
 
+SplitNames(List nameList) {
+  
+  var namesLessEight = new List();
+  var namesEight = new List();
+  var namesMoreEight = new List();
+  
+  String name;
+  
+    for(var i = 0; i<nameList.length; i++) {
+      name=nameList[i].toString();
+       
+       if (name.length>8) namesMoreEight.add(name);
+       if (name.length==8) namesEight.add(name);
+       if (name.length<8) namesLessEight.add(name);
+       
+    }
+    
+  var nMap = new Map();
+  nMap['Names with more than 8 letters'] = namesMoreEight;
+  nMap['Names with 8 letters'] = namesEight;
+  nMap['Names with less than 8 letters'] = namesLessEight;
+  
+    
+  return nMap;
+  
+}
+
+MatchTeamsPlayers(Map players) {
+  
+  int n=0;
+  var teamList = players.keys.toList();
+  teamList.sort((a,b) => a.compareTo(b));
+  
+  var newList= new List();
+    
+    for (var i=0; i<teamList.length; i++) {
+      newList.add(teamList[i]);     
+      newList.add(players[newList[n]].toString());
+      n=n+2;
+    }
+  
+   return newList;
+}
 
 
 
