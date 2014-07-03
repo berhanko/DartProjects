@@ -15,6 +15,42 @@ CheckIfLetter(String fString) {
   return isString;
 }
 
+LongestSentenceNew(String sentence) {
+  
+  var newSentence= sentence.replaceAll(' ', '');
+  var slength = new List();
+  var parts = newSentence.split(".");
+    for(var i=0; i<parts.length; i++) {
+      slength.add(parts[i].length);
+    }
+  var sMap = new Map(); 
+    for(var i=0; i<slength.length; i++) {
+      sMap[slength[i]]=parts[i];
+    }
+    
+  slength.sort((a,b) => b.compareTo(a));
+  
+  return  sMap[slength[0]];    
+}
+
+LongestWord(String sentence) {
+  
+  var newSentence= sentence.replaceAll(new RegExp(r'[.,!+$%&/()={}*?-_|:;`@<>]'), '');
+  var slength = new List();
+  var parts = newSentence.split(" ");
+    for(var i=0; i<parts.length; i++) {
+      slength.add(parts[i].length);
+    }
+  var sMap = new Map(); 
+    for(var i=0; i<slength.length; i++) {
+      sMap[slength[i]]=parts[i];
+    }
+    
+  slength.sort((a,b) => b.compareTo(a));
+  
+  return  sMap[slength[0]];    
+}
+
 LongestSentence(String sentence) { //Also find longest word: change temp="." with temp=" "
   
   var startSentence, endSentence, lastBig, nextSentence=0;

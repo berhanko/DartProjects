@@ -5,8 +5,9 @@ void main() {
   
   //print(CheckIfLetter('Berhan_ '));
   
- // print(LongestSentence("Berhan gidiyorgibiyapıyor. Berhan dönecekmiş gibi yapın. Sıcucuckum."));
-  //print(palindrome('A man, a plan, a canal: Panama'));
+ print(LongestSentenceNew("Berhan gidiyorgibiyapıyordududududdudududud. Berhan dönecekmiş gibi yapın. Sıcucuckum."));
+ print(LongestWord("Berhan gidiyorgibi yapıyordudu dud!u_d}du,dududud. Berhan dönecekmiş gibi yapın. Sıcucuckum."));
+   //print(palindrome('A man, a plan, a canal: Panama'));
   
   //print(ConvertGrade(90));
   
@@ -15,7 +16,7 @@ void main() {
   
   print(SplitNames(nameList));*/
   
-  var players = {
+/*  var players = {
         'Beşiktaş': ['Olcay', 'Almeida'],
         'Galatasaray': ['Sabri', 'Muslera', 'Selçuk'],
         'Fenerbahçe': ['Alex', 'Emenike', 'Yobo', 'Volkan']
@@ -23,7 +24,7 @@ void main() {
   
   print(players);
   
-  print(MatchTeamsPlayers(players));
+  print(MatchTeamsPlayers(players));*/
   
 }
 
