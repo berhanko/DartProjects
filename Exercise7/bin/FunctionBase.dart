@@ -1,4 +1,5 @@
 
+import 'dart:collection';
 
 EmailValidation(String email){
   bool validation=false;  
@@ -117,4 +118,67 @@ class TextEncoder {
      return decodedText;
    }
       
+}
+
+LetterUsage(String text){
+  
+    //Clean Text
+  
+  var nakedText = text.replaceAll(new RegExp(r'\W+'), '');
+  nakedText = nakedText.replaceAll(new RegExp(r'\d+'), '');
+  var lMatrix = new Map();
+    
+    //Find Letter Count
+
+  var nakedTextList = nakedText.split('');
+  nakedTextList.sort((a,b) => a.compareTo(b));
+    
+    for (var char in nakedTextList) {
+      lMatrix[char]=lMatrix.putIfAbsent(char, () => 0) +1;
+    }
+    
+   //Rank
+    
+  var rankedMatrix = new SplayTreeMap();
+    lMatrix.forEach((k,v) {
+      rankedMatrix[v]=k;
+    }); 
+  
+   //Prepare Table 
+  var table = new Map();
+  var allLetters = lMatrix.keys.toList();
+  var allRanks = lMatrix.values.toList();
+  var _topLetters = rankedMatrix.values.toList();
+  var _topRanks = rankedMatrix.keys.toList();
+  var topLetters = new List();
+  var topRanks = new List();
+    
+    //Top 10 Letters & Ranks
+    for (var i=rankedMatrix.length-1; i>=rankedMatrix.length-10; i--){
+      topLetters.add(_topLetters[i]);
+      topRanks.add(_topRanks[i]);
+    }
+    
+/*    //Extract Top 10 from "AllLetters" & "AllRanks"
+    _allLetters.forEach((x) {
+      if (!_topLetters.contains(x)) {
+        allLetters.add(x);
+        allRanks.add(_allRanks.elementAt(_allLetters.indexOf(x)));
+      }
+    });  */
+    
+    //Total Letter Count
+    var totalRank=0;
+    for (var total in allRanks){
+      totalRank=totalRank+total;
+    }
+    
+    var temp1, temp2;
+    for (var i=0; i<topLetters.length; i++) {
+      temp1=topRanks[i]/(totalRank-topRanks[i]);
+      temp2=temp1.toStringAsPrecision(4);
+      table[topLetters[i]] = ['${topRanks[i]} / $temp2%'];
+    }
+    
+ return table;
 }
