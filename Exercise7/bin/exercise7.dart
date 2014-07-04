@@ -3,7 +3,7 @@ import 'FunctionBase.dart';
 
 void main() {
   
-  //print(EmailValidation("deneme@berhan.com"));
+  print(EmailValidation("deneme@berhan.com"));
 
   var encodeText = """ Count the number of occurrences of letters in a given sentence. 
                         Discard letters that have counts greater than nine. Discard also 

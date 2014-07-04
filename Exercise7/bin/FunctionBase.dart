@@ -15,7 +15,7 @@ EmailValidation(String email){
       }
     }
 
- return validation;   
+ return validation;
 }
 
 class NewTextEncoder{
