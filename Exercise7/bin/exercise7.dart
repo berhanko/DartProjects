@@ -26,7 +26,15 @@ do you think he'll fit in seamlessly?""";
   
  print(letsDecode);*/
   
- print(LetterUsage(letterText));
+ //print(LetterUsage(letterText));
+  
+ var deneme = 'Berhan'; 
+ var encText = new NewTextEncoder(letterText,2,4).Encode();
+ print(encText);
+ print('\n');
+ var decText = new NewTextEncoder(encText,2,4).Decode();
+ print(decText);
+ 
  
   
 }
